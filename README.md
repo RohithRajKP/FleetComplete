@@ -25,7 +25,7 @@ first screen contains loads vehicle details from network.
 
 selected vehicles trip details will be shown on second screen
 
-navigation is used for commination between the fragments.
+navigation is used for communication between the fragments.
 
 kodein di is added.
 need to work on unit tesing(TDD),jetpack compose.
