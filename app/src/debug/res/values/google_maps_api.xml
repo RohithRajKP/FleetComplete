@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=CA:7B:8D:41:EB:E3:E2:F4:DE:CA:1E:7C:5F:38:39:1F:B5:6A:8D:78%3Bcom.fleetcomplete.ui
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.fleetcomplete.ui
+
+    SHA-1 certificate fingerprint:
+    CA:7B:8D:41:EB:E3:E2:F4:DE:CA:1E:7C:5F:38:39:1F:B5:6A:8D:78
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBTFL-3Xgg-NzBpBe9Q24ayhrUjtmgVBPM</string>
+</resources>

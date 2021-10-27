@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    >
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="rv"
+            type="com.fleetcomplete.models.Response" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray"
+        android:orientation="vertical">
+        <!--            android:text="@{@string/location(rv.plate,rv.driverName)}"-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_home"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/card_height"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/curve_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.527"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--          @{isValid ? @color/green :   {vm.runtime == null ? `` : @string/min(vm.runtime) "" @color/red}-->
+            >
+
+            <TextView
+                android:id="@+id/txt_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:text="@{rv.plate+  ` / `+ (rv.driverName ?? @string/driver) }"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize22"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/txt_speed"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            -->
+
+            <TextView
+                android:id="@+id/txt_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_16"
+                android:text="@{Integer.toString(rv.speed)+` km/h `}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize22"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/txt_dataage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/txt_plate"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.262" />
+
+            <TextView
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_82"
+
+                android:text="@{rv.address}"
+                app:layout_constraintEnd_toStartOf="@+id/txt_dataage"
+                app:layout_constraintHorizontal_bias="0.155"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_plate" />
+
+            <TextView
+                android:id="@+id/txt_dataage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_82"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:data_age="@{rv.timestamp}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_plate"
+
+
+                />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
